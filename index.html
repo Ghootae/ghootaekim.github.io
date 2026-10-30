@@ -190,6 +190,14 @@
     .testimonial p { margin: 0; font-family: Georgia, serif; font-size: 1.15rem; }
     .testimonial cite { display: block; margin-top: 10px; color: var(--muted); font-style: normal; font-size: .9rem; }
 
+    .book { display: grid; grid-template-columns: 360px 1fr; gap: 64px; align-items: center; }
+    .book-cover { width: 100%; border-radius: 6px; box-shadow: var(--shadow); transform: rotate(-2deg); }
+    .book h2 { font-size: clamp(2.2rem, 4.5vw, 3.4rem); }
+    .book-sub { margin: 10px 0 0; color: var(--blue); font-size: 1.2rem; font-weight: 800; }
+    .book-meta { margin: 6px 0 18px; color: var(--muted); font-size: .92rem; }
+    .book-copy { margin: 0 0 24px; max-width: 640px; color: var(--muted); }
+    .book .button { background: var(--navy); color: var(--white); }
+
     .cta { padding: 70px 24px; background: var(--gold); color: #17232b; }
     .cta-inner { max-width: var(--max); margin: auto; display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; }
     .cta h2 { max-width: 700px; }
@@ -214,7 +222,8 @@
       .portrait-wrap { justify-self: start; width: 230px; order: -1; }
       .hero h1 { font-size: clamp(3.2rem, 16vw, 5.2rem); }
       .section { padding-block: 66px; }
-      .section-head, .journey, .cta-inner { grid-template-columns: 1fr; gap: 22px; }
+      .section-head, .journey, .cta-inner, .book { grid-template-columns: 1fr; gap: 22px; }
+      .book-cover { width: 260px; }
       .journey aside { position: static; }
       .conference-grid, .detail-grid { grid-template-columns: 1fr; }
       .publication { grid-template-columns: 64px 1fr; }
@@ -242,6 +251,7 @@
       <a class="brand" href="#top">Ghootae Kim<span>.</span></a>
       <div class="nav-links">
         <a href="#mentoring">Mentoring</a>
+        <a href="#book">Book</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#experience">Experience</a>
@@ -312,6 +322,20 @@
         -->
       </section>
     </div>
+
+    <section class="section" id="book">
+      <div class="book">
+        <img class="book-cover" src="assets/book-cover.jpg" alt="Cover of 대치동에 간 뇌과학자">
+        <div>
+          <p class="section-kicker">New book · November 2026</p>
+          <h2 lang="ko">대치동에 간 뇌과학자</h2>
+          <p class="book-sub" lang="ko">AI 시대 상위 1% 뇌과학 공부법</p>
+          <p class="book-meta">A Neuroscientist in Daechi-dong · Bonus Publishing · 256 pages · Release November 20, 2026</p>
+          <p class="book-copy">A guide for students on how the brain actually learns. Drawing on nearly twenty years of memory research, the book explains why memorization is the foundation of creativity, how the hippocampus builds memories, and why sleep consolidates what we study, and turns these principles into concrete study strategies.</p>
+          <a class="button" href="https://product.kyobobook.co.kr/detail/S000221836182" rel="noopener">Pre-order at Kyobo Book Centre</a>
+        </div>
+      </div>
+    </section>
 
     <section class="section" id="research">
       <div class="section-head">
