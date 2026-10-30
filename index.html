@@ -165,6 +165,27 @@
     .clean-list li:first-child { border-top: 0; padding-top: 0; }
     .clean-list strong { color: var(--ink); display: block; }
 
+    .mentoring { background: var(--white); border-block: 1px solid var(--line); }
+    .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 34px; }
+    .stat { padding: 22px; border-radius: 18px; background: var(--paper); border: 1px solid var(--line); }
+    .stat strong { display: block; color: var(--blue); font-family: Georgia, serif; font-size: 2.3rem; line-height: 1.1; }
+    .stat span { color: var(--muted); font-size: .9rem; }
+    .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 34px; }
+    .process-step { padding: 22px; border-radius: 18px; background: var(--navy); color: var(--white); }
+    .process-step .num { color: #7de5dd; font-family: Georgia, serif; font-size: 1.6rem; }
+    .process-step h3 { margin: 10px 0 6px; font-size: 1.02rem; }
+    .process-step p { margin: 0; color: #bcd0da; font-size: .9rem; }
+    .outcome-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .outcome { padding: 23px; border-radius: 18px; background: var(--white); border: 1px solid var(--line); }
+    .outcome .date { color: #167e79; }
+    .outcome h3 { margin: 8px 0 8px; font-family: Georgia, serif; font-size: 1.13rem; line-height: 1.35; }
+    .outcome p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .testimonial { margin: 34px 0 0; padding: 28px; border-left: 4px solid var(--gold); border-radius: 0 18px 18px 0; background: var(--paper); }
+    .testimonial p { margin: 0; font-family: Georgia, serif; font-size: 1.15rem; }
+    .testimonial cite { display: block; margin-top: 10px; color: var(--muted); font-style: normal; font-size: .9rem; }
+    /* TODO: remove .placeholder styling once real data replaces every placeholder */
+    .placeholder { outline: 2px dashed #e0a21b; outline-offset: 3px; }
+
     .cta { padding: 70px 24px; background: var(--gold); color: #17232b; }
     .cta-inner { max-width: var(--max); margin: auto; display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; }
     .cta h2 { max-width: 700px; }
@@ -178,7 +199,8 @@
     @media (max-width: 900px) {
       .nav-links a:not(:last-child) { display: none; }
       .hero-inner { grid-template-columns: 1fr .55fr; gap: 30px; }
-      .focus-grid { grid-template-columns: repeat(2, 1fr); }
+      .focus-grid, .stat-grid, .process { grid-template-columns: repeat(2, 1fr); }
+      .outcome-grid { grid-template-columns: 1fr; }
       .public-grid { grid-template-columns: repeat(2, 1fr); }
       .public-card:last-child { grid-column: span 2; min-height: 180px; }
     }
@@ -198,7 +220,7 @@
       .nav { padding-inline: 18px; }
       .nav-links a { font-size: .82rem; }
       .hero-inner, .section { padding-inline: 18px; }
-      .focus-grid, .public-grid { grid-template-columns: 1fr; }
+      .focus-grid, .public-grid, .process { grid-template-columns: 1fr; }
       .public-card:last-child { grid-column: auto; }
       .conference-shell { padding: 24px 18px; margin-inline: -2px; }
       .publication { grid-template-columns: 1fr; gap: 8px; }
@@ -214,6 +236,7 @@
     <nav class="nav" aria-label="Primary navigation">
       <a class="brand" href="#top">Ghootae Kim<span>.</span></a>
       <div class="nav-links">
+        <a href="#mentoring">Mentoring</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#experience">Experience</a>
@@ -231,7 +254,7 @@
           <p class="hero-copy">I study how experience changes memory—how the brain stabilizes, differentiates, and reorganizes what we learn.</p>
           <div class="actions">
             <a class="button primary" href="#publications">Explore research</a>
-            <a class="button secondary" href="mailto:kimghootae@gmail.com?subject=CV%20request">Request CV</a>
+            <a class="button secondary" href="#mentoring">Student research mentoring</a>
           </div>
           <div class="contact-row">
             <a href="mailto:kimghootae@gmail.com">kimghootae@gmail.com</a>
@@ -245,6 +268,38 @@
         </div>
       </div>
     </section>
+
+    <!-- Student research mentoring. Every element with class="placeholder" holds
+         sample text: replace it with real, verifiable data (and drop the class) before publishing. -->
+    <div class="mentoring">
+      <section class="section" id="mentoring">
+        <div class="section-head">
+          <div><p class="section-kicker">Student research mentoring</p><h2>From a question to a paper</h2></div>
+          <p class="section-intro">I guide high-school students in the US, Korean students studying in the US, and students at international schools in Korea through original research: finding a real question, designing a study, analyzing data, and writing it up to publication standard. The same training that led to papers in PNAS and Nature Communications now goes into helping students build research that stands out in US college admissions.</p>
+        </div>
+        <div class="stat-grid">
+          <div class="stat placeholder"><strong>[N]</strong><span>Students mentored</span></div>
+          <div class="stat placeholder"><strong>[N]</strong><span>Student papers published or accepted</span></div>
+          <div class="stat placeholder"><strong>[N]</strong><span>Competition awards</span></div>
+          <div class="stat placeholder"><strong>[N]</strong><span>Admitted to [selective US universities]</span></div>
+        </div>
+        <div class="process">
+          <article class="process-step"><span class="num">01</span><h3>Find the question</h3><p>Turn a student’s genuine interest into a focused, answerable research question.</p></article>
+          <article class="process-step"><span class="num">02</span><h3>Design the study</h3><p>Choose methods, data, and analyses the way a working scientist would.</p></article>
+          <article class="process-step"><span class="num">03</span><h3>Analyze &amp; interpret</h3><p>Run the analysis and reason carefully about what the results do and do not show.</p></article>
+          <article class="process-step"><span class="num">04</span><h3>Write &amp; submit</h3><p>Draft, revise, and prepare the paper for journals, competitions, or applications.</p></article>
+        </div>
+        <div class="outcome-grid">
+          <article class="outcome placeholder"><span class="date">[Year] · [Publication / Competition]</span><h3>[Student paper title]</h3><p>[Grade, school type, e.g. 11th grade, international school in Seoul] · [Outcome: journal, award, or admission]</p></article>
+          <article class="outcome placeholder"><span class="date">[Year] · [Publication / Competition]</span><h3>[Student paper title]</h3><p>[Grade, school type] · [Outcome]</p></article>
+          <article class="outcome placeholder"><span class="date">[Year] · [Publication / Competition]</span><h3>[Student paper title]</h3><p>[Grade, school type] · [Outcome]</p></article>
+        </div>
+        <blockquote class="testimonial placeholder">
+          <p>“[Testimonial from a parent or student, used with permission]”</p>
+          <cite>[Parent of an 11th-grade student, US high school]</cite>
+        </blockquote>
+      </section>
+    </div>
 
     <section class="section" id="research">
       <div class="section-head">
@@ -362,7 +417,7 @@
 
     <section class="cta" id="contact">
       <div class="cta-inner">
-        <div><p class="section-kicker">Contact</p><h2>Let’s talk about memory, learning, and education.</h2><p>For research, teaching, or writing inquiries, email is the best way to get in touch.</p></div>
+        <div><p class="section-kicker">Contact</p><h2>Let’s talk about your student’s research.</h2><p>For mentoring consultations, research, teaching, or writing inquiries, email is the best way to get in touch.</p></div>
         <a class="button" href="mailto:kimghootae@gmail.com">Email Ghootae</a>
       </div>
     </section>
