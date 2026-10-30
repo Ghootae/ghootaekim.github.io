@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ghootae Kim · Cognitive Neuroscientist</title>
+  <meta name="description" content="Ghootae Kim is a cognitive neuroscientist and educator studying how memories are formed, differentiated, and reorganized.">
+  <meta name="theme-color" content="#061b2c">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23061b2c'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%236ce5dc' stroke-width='4'/%3E%3Ccircle cx='38' cy='24' r='5' fill='%23f6c85f'/%3E%3Cpath d='M18 39c9-8 19-7 28 1' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #071724;
+      --navy: #061b2c;
+      --blue: #0a3855;
+      --teal: #29b6ad;
+      --teal-soft: #d9f7f4;
+      --gold: #f4bc4c;
+      --paper: #f4f8fa;
+      --white: #ffffff;
+      --muted: #587080;
+      --line: #cddce4;
+      --shadow: 0 20px 60px rgba(5, 31, 49, .13);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; max-width: 100%; overflow-x: hidden; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    .skip-link { position: fixed; top: -60px; left: 1rem; z-index: 100; background: var(--white); padding: .7rem 1rem; border-radius: 10px; }
+    .skip-link:focus { top: 1rem; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      background: rgba(6, 27, 44, .92);
+      backdrop-filter: blur(14px);
+      color: var(--white);
+    }
+    .nav { max-width: var(--max); margin: auto; min-height: 68px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { text-decoration: none; font-weight: 800; letter-spacing: -.02em; white-space: nowrap; }
+    .brand span { color: var(--teal); }
+    .nav-links { display: flex; align-items: center; gap: 5px; }
+    .nav-links a { text-decoration: none; color: #c8d7df; font-size: .9rem; font-weight: 700; padding: .55rem .72rem; border-radius: 999px; }
+    .nav-links a:hover, .nav-links a:focus-visible, .nav-links a.active { color: var(--white); background: rgba(255,255,255,.1); outline: none; }
+
+    .hero {
+      overflow: hidden;
+      position: relative;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 79% 22%, rgba(41,182,173,.22), transparent 28%),
+        linear-gradient(135deg, #061b2c 0%, #08283f 62%, #0a3855 100%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 510px;
+      height: 510px;
+      right: -175px;
+      top: -175px;
+      border: 1px solid rgba(108,229,220,.28);
+      border-radius: 50%;
+      box-shadow: 0 0 0 72px rgba(108,229,220,.05), 0 0 0 145px rgba(108,229,220,.035);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: var(--max); margin: auto; padding: 86px 24px 80px; display: grid; grid-template-columns: 1.25fr .75fr; gap: 76px; align-items: center; position: relative; z-index: 2; }
+    .hero-inner > * { min-width: 0; }
+    .eyebrow { margin: 0 0 12px; color: #7de5dd; font-size: .82rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 800px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(3rem, 7vw, 6.6rem); line-height: .91; letter-spacing: -.055em; font-weight: 700; }
+    .hero h1 em { display: block; color: var(--gold); font-style: normal; }
+    .hero-copy { margin: 28px 0 0; max-width: 670px; font-size: clamp(1.05rem, 1.8vw, 1.28rem); color: #c6d7e0; overflow-wrap: anywhere; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .75rem 1.1rem; border-radius: 999px; border: 1px solid transparent; text-decoration: none; font-weight: 800; }
+    .button.primary { background: var(--teal); color: #03171a; }
+    .button.primary:hover { background: #76e8df; }
+    .button.secondary { color: var(--white); border-color: rgba(255,255,255,.36); }
+    .button.secondary:hover { background: rgba(255,255,255,.1); }
+    .contact-row { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 28px; color: #adc3ce; font-size: .94rem; }
+    .contact-row a { color: inherit; text-underline-offset: 4px; }
+    .portrait-wrap { position: relative; width: min(100%, 340px); justify-self: end; }
+    .portrait-card { padding: 14px; border: 1px solid rgba(255,255,255,.25); border-radius: 40% 40% 22px 22px; background: rgba(255,255,255,.07); box-shadow: var(--shadow); transform: rotate(2deg); }
+    .portrait-card img { width: 100%; aspect-ratio: 4 / 4.6; object-fit: cover; object-position: center; border-radius: 38% 38% 14px 14px; filter: saturate(.88) contrast(1.04); }
+    .orbit-dot { position: absolute; width: 20px; height: 20px; right: -8px; top: 27%; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 9px rgba(244,188,76,.16); }
+
+    main section { scroll-margin-top: 86px; }
+    .section { max-width: var(--max); margin: auto; padding: 86px 24px; }
+    .section-head { display: grid; grid-template-columns: 1fr 1.15fr; gap: 50px; align-items: end; margin-bottom: 34px; }
+    .section-kicker { margin: 0 0 8px; color: #167e79; font-size: .78rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+    h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.3rem, 5vw, 4rem); line-height: 1; letter-spacing: -.035em; }
+    .section-intro { margin: 0; color: var(--muted); font-size: 1.05rem; }
+
+    .focus-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .focus-card { min-height: 184px; padding: 23px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); box-shadow: 0 10px 34px rgba(18,53,71,.05); }
+    .focus-card .num { display: block; color: var(--teal); font-family: Georgia, serif; font-size: 2rem; line-height: 1; }
+    .focus-card h3 { margin: 28px 0 7px; font-size: 1.05rem; }
+    .focus-card p { margin: 0; color: var(--muted); font-size: .93rem; }
+
+    .band { background: var(--white); border-block: 1px solid var(--line); }
+    .journey { display: grid; grid-template-columns: .86fr 1.14fr; gap: 56px; }
+    .journey aside { position: sticky; top: 104px; align-self: start; }
+    .journey aside p { color: var(--muted); }
+    .timeline { border-left: 2px solid var(--line); padding-left: 30px; }
+    .timeline-item { position: relative; padding: 0 0 32px; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before { content: ""; position: absolute; left: -39px; top: .42rem; width: 14px; height: 14px; border-radius: 50%; background: var(--white); border: 4px solid var(--teal); }
+    .date { color: #167e79; font-size: .81rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    .timeline h3 { margin: 4px 0 2px; font-size: 1.18rem; }
+    .timeline p { margin: 0; color: var(--muted); }
+    .education { margin-top: 34px; padding: 28px; background: var(--navy); border-radius: var(--radius); color: var(--white); }
+    .education h3 { margin-top: 0; }
+    .degree { display: grid; grid-template-columns: 60px 1fr; gap: 14px; padding: 13px 0; border-top: 1px solid rgba(255,255,255,.14); }
+    .degree:first-of-type { border-top: 0; }
+    .degree strong { color: #7de5dd; }
+    .degree p { margin: 0; color: #d1dde3; }
+
+    .pub-list { display: grid; gap: 14px; }
+    .publication { display: grid; grid-template-columns: 84px 1fr auto; gap: 20px; align-items: start; padding: 22px; background: var(--white); border: 1px solid var(--line); border-radius: 18px; transition: transform .2s ease, box-shadow .2s ease; }
+    .publication:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(10,56,85,.08); }
+    .pub-year { color: var(--blue); font-family: Georgia, serif; font-size: 1.45rem; font-weight: 700; }
+    .publication h3 { margin: 0 0 5px; font-family: Georgia, serif; font-size: 1.13rem; line-height: 1.35; }
+    .publication p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .source { color: #086d69; font-weight: 800; text-underline-offset: 4px; white-space: nowrap; }
+
+    .conference-shell { padding: 34px; border-radius: var(--radius); background: var(--navy); color: var(--white); }
+    .conference-shell h2 { color: var(--white); }
+    .conference-shell .section-intro { color: #bcd0da; }
+    .conference-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 32px; }
+    .conference { padding: 20px; border: 1px solid rgba(255,255,255,.15); border-radius: 16px; background: rgba(255,255,255,.06); }
+    .conference .date { color: #7de5dd; }
+    .conference h3 { margin: 6px 0 8px; font-size: 1rem; line-height: 1.45; }
+    .conference p { margin: 0; color: #a9c0cb; font-size: .88rem; }
+    .conference a { color: #f8d889; }
+    details { margin-top: 16px; border: 1px solid rgba(255,255,255,.2); border-radius: 16px; }
+    summary { cursor: pointer; padding: 16px 20px; font-weight: 800; color: #d9f7f4; }
+    summary:hover { color: var(--white); }
+    .archive-list { margin: 0; padding: 0 24px 22px 46px; color: #c5d5dc; }
+    .archive-list li { margin: 11px 0; }
+
+    .public-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+    .public-card { display: flex; flex-direction: column; min-height: 245px; padding: 22px; border-radius: 18px; background: var(--white); border: 1px solid var(--line); text-decoration: none; }
+    .public-card:hover { border-color: var(--teal); box-shadow: 0 10px 30px rgba(10,56,85,.07); }
+    .public-card .date { color: #167e79; }
+    .public-card h3 { margin: 18px 0 10px; font-family: Georgia, serif; font-size: 1.13rem; line-height: 1.3; }
+    .public-card p { margin: auto 0 0; color: var(--muted); font-size: .86rem; }
+
+    .detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .detail-card { padding: 25px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--line); }
+    .detail-card h3 { margin: 0 0 15px; font-family: Georgia, serif; font-size: 1.35rem; }
+    .clean-list { list-style: none; padding: 0; margin: 0; }
+    .clean-list li { padding: 11px 0; border-top: 1px solid var(--line); color: var(--muted); }
+    .clean-list li:first-child { border-top: 0; padding-top: 0; }
+    .clean-list strong { color: var(--ink); display: block; }
+
+    .cta { padding: 70px 24px; background: var(--gold); color: #17232b; }
+    .cta-inner { max-width: var(--max); margin: auto; display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; }
+    .cta h2 { max-width: 700px; }
+    .cta p { margin: 14px 0 0; max-width: 700px; }
+    .cta .button { background: var(--navy); color: var(--white); }
+
+    footer { background: #04141f; color: #9fb4bf; }
+    .footer-inner { max-width: var(--max); margin: auto; padding: 30px 24px; display: flex; justify-content: space-between; gap: 20px; font-size: .9rem; }
+    footer a { color: #dce9ef; }
+
+    @media (max-width: 900px) {
+      .nav-links a:not(:last-child) { display: none; }
+      .hero-inner { grid-template-columns: 1fr .55fr; gap: 30px; }
+      .focus-grid { grid-template-columns: repeat(2, 1fr); }
+      .public-grid { grid-template-columns: repeat(2, 1fr); }
+      .public-card:last-child { grid-column: span 2; min-height: 180px; }
+    }
+    @media (max-width: 720px) {
+      .hero-inner { grid-template-columns: 1fr; padding-top: 58px; }
+      .portrait-wrap { justify-self: start; width: 230px; order: -1; }
+      .hero h1 { font-size: clamp(3.2rem, 16vw, 5.2rem); }
+      .section { padding-block: 66px; }
+      .section-head, .journey, .cta-inner { grid-template-columns: 1fr; gap: 22px; }
+      .journey aside { position: static; }
+      .conference-grid, .detail-grid { grid-template-columns: 1fr; }
+      .publication { grid-template-columns: 64px 1fr; }
+      .publication .source { grid-column: 2; }
+      .footer-inner { flex-direction: column; }
+    }
+    @media (max-width: 520px) {
+      .nav { padding-inline: 18px; }
+      .nav-links a { font-size: .82rem; }
+      .hero-inner, .section { padding-inline: 18px; }
+      .focus-grid, .public-grid { grid-template-columns: 1fr; }
+      .public-card:last-child { grid-column: auto; }
+      .conference-shell { padding: 24px 18px; margin-inline: -2px; }
+      .publication { grid-template-columns: 1fr; gap: 8px; }
+      .publication .source { grid-column: 1; }
+      .contact-row { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top">Ghootae Kim<span>.</span></a>
+      <div class="nav-links">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">Cognitive Neuroscientist · Educator</p>
+          <h1>Ghootae <em>Kim</em></h1>
+          <p class="hero-copy">I study how experience changes memory—how the brain stabilizes, differentiates, and reorganizes what we learn.</p>
+          <div class="actions">
+            <a class="button primary" href="#publications">Explore research</a>
+            <a class="button secondary" href="mailto:kimghootae@gmail.com?subject=CV%20request">Request CV</a>
+          </div>
+          <div class="contact-row">
+            <a href="mailto:kimghootae@gmail.com">kimghootae@gmail.com</a>
+            <span>Seoul, Republic of Korea</span>
+            <span>Human fMRI · Computational modeling</span>
+          </div>
+        </div>
+        <div class="portrait-wrap" aria-label="Portrait of Ghootae Kim">
+          <div class="portrait-card"><img src="assets/ghootae-kim.jpeg" alt="Ghootae Kim"></div>
+          <span class="orbit-dot" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="section-head">
+        <div><p class="section-kicker">Research focus</p><h2>Memory in motion</h2></div>
+        <p class="section-intro">My work connects cognitive theory, human neuroimaging, and computational approaches to explain how memories compete, separate, and support new knowledge.</p>
+      </div>
+      <div class="focus-grid">
+        <article class="focus-card"><span class="num">01</span><h3>Episodic memory</h3><p>How events are represented, retrieved, and updated across experiences.</p></article>
+        <article class="focus-card"><span class="num">02</span><h3>Prediction error</h3><p>How violated expectations reshape competing memory representations.</p></article>
+        <article class="focus-card"><span class="num">03</span><h3>Memory &amp; sleep</h3><p>How REM sleep supports neural differentiation and memory stability.</p></article>
+        <article class="focus-card"><span class="num">04</span><h3>Learning decisions</h3><p>How implicit learning and confidence interact with decision processes.</p></article>
+      </div>
+    </section>
+
+    <div class="band" id="experience">
+      <section class="section journey">
+        <aside>
+          <p class="section-kicker">Experience &amp; education</p>
+          <h2>Across research and teaching</h2>
+          <p>Training in cognitive neuroscience has grown into a practice that spans laboratory research, scientific leadership, and critical-reading education.</p>
+        </aside>
+        <div>
+          <div class="timeline" aria-label="Professional appointments">
+            <article class="timeline-item"><span class="date">2022–Present</span><h3>Critical Reading and Writing Instructor</h3><p>Culture-Literacy Research Institute</p></article>
+            <article class="timeline-item"><span class="date">2018–2022</span><h3>Senior Researcher and Principal Investigator</h3><p>Cognitive Science Research Group, Korea Brain Research Institute</p></article>
+            <article class="timeline-item"><span class="date">2016–2018</span><h3>Postdoctoral Fellow</h3><p>Department of Psychology, University of Oregon · Advisor: Brice A. Kuhl</p></article>
+          </div>
+          <div class="education">
+            <h3>Education</h3>
+            <div class="degree"><strong>2016</strong><p><b>PhD, Psychology</b><br>Princeton University · Nicholas B. Turk-Browne and Kenneth A. Norman</p></div>
+            <div class="degree"><strong>2013</strong><p><b>MA, Psychology</b><br>Princeton University</p></div>
+            <div class="degree"><strong>2010</strong><p><b>MA, Psychology</b><br>Yonsei University · Do-Joon Yi</p></div>
+            <div class="degree"><strong>2008</strong><p><b>BA, Psychology</b><br>Yonsei University</p></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="section" id="publications">
+      <div class="section-head">
+        <div><p class="section-kicker">Peer-reviewed work</p><h2>Publications</h2></div>
+        <p class="section-intro">Research on memory competition, prediction error, neural differentiation, and hippocampal remapping.</p>
+      </div>
+      <div class="pub-list">
+        <article class="publication"><span class="pub-year">2026</span><div><h3>The role of rapid eye movement sleep in neural differentiation of memories in the hippocampus</h3><p>McDevitt, E. A., Kim, G., Turk-Browne, N. B., &amp; Norman, K. A. · Journal of Cognitive Neuroscience, 38(1), 126–143.</p></div><a class="source" href="https://doi.org/10.1162/jocn.a.82" rel="noopener">DOI</a></article>
+        <article class="publication"><span class="pub-year">2021</span><div><h3>Abrupt hippocampal remapping signals resolution of memory interference</h3><p>Wanjia, G., Favila, S. E., Kim, G., Molitor, R. J., &amp; Kuhl, B. A. · Nature Communications, 12, 4816.</p></div><a class="source" href="https://doi.org/10.1038/s41467-021-25126-0" rel="noopener">DOI</a></article>
+        <article class="publication"><span class="pub-year">2021</span><div><h3>Diagnosis and visualization of intracranial hemorrhage on computed tomography images</h3><p>Youn, Y., Kim, M., Kim, J., Kang, B. K., &amp; Kim, G. · Journal of Biomedical Engineering Research, 42(4), 150–158.</p></div><a class="source" href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002750691" rel="noopener">Record</a></article>
+        <article class="publication"><span class="pub-year">2019</span><div><h3>Neural overlap in item representations across episodes impairs context memory</h3><p>Kim, G., Norman, K. A., &amp; Turk-Browne, N. B. · Cerebral Cortex, 29(6), 2682–2693.</p></div><a class="source" href="https://doi.org/10.1093/cercor/bhy137" rel="noopener">DOI</a></article>
+        <article class="publication"><span class="pub-year">2017</span><div><h3>Neural differentiation of incorrectly predicted memories</h3><p>Kim, G., Norman, K. A., &amp; Turk-Browne, N. B. · Journal of Neuroscience, 37(8), 2022–2031.</p></div><a class="source" href="https://doi.org/10.1523/JNEUROSCI.3272-16.2017" rel="noopener">DOI</a></article>
+        <article class="publication"><span class="pub-year">2014</span><div><h3>Pruning of memories by context-based prediction error</h3><p>Kim, G., Lewis-Peacock, J. A., Norman, K. A., &amp; Turk-Browne, N. B. · PNAS, 111(24), 8997–9002.</p></div><a class="source" href="https://doi.org/10.1073/pnas.1319438111" rel="noopener">DOI</a></article>
+        <article class="publication"><span class="pub-year">2010</span><div><h3>Repetition anti-priming: The effects of perceptual ambiguity on object recognition</h3><p>Kim, G., &amp; Yi, D.-J. · Cognitive Science, 21(4), 603–625.</p></div><a class="source" href="https://doi.org/10.19066/cogsci.2010.21.4.007" rel="noopener">DOI</a></article>
+      </div>
+    </section>
+
+    <section class="section" id="presentations">
+      <div class="conference-shell">
+        <div class="section-head">
+          <div><p class="section-kicker">Conferences</p><h2>Recent presentations</h2></div>
+          <p class="section-intro">Selected talks, posters, and abstracts across sleep, episodic memory, visual cognition, and applied deep learning.</p>
+        </div>
+        <div class="conference-grid">
+          <article class="conference"><span class="date">SLEEP 2024 · Abstract</span><h3>Neural differentiation of competing memory representations after a prediction error depends on REM sleep</h3><p>Houston, Texas · <a href="https://doi.org/10.1093/sleep/zsae067.0058">Published abstract</a></p></article>
+          <article class="conference"><span class="date">CEMS 2022 · Poster</span><h3>How memory representations change as a function of competition-dependent learning and sleep</h3><p>Philadelphia, Pennsylvania · <a href="https://memory.psych.upenn.edu/CEMS_2022">Program</a></p></article>
+          <article class="conference"><span class="date">VSS 2021 · Poster</span><h3>Confidence computation incorporates task-relevant and task-irrelevant noises unlike decision making</h3><p>Virtual conference · <a href="https://doi.org/10.1167/jov.21.9.2532">Abstract</a></p></article>
+          <article class="conference"><span class="date">KSCBP 2020 · Presentation</span><h3>Feedback from higher visual processing regions modulates redundancy gains in retinotopic cortex</h3><p>Virtual conference · <a href="https://cogpsy.jp/wp/wp-content/uploads/KSCBP2020_ConferenceProgram_20200819.pdf">Program</a></p></article>
+          <article class="conference"><span class="date">Cognitive Neuroscience 2019 · Talk</span><h3>Context-based memory reactivation enhances learning of structural knowledge</h3><p>Sungkyunkwan University, Suwon</p></article>
+          <article class="conference"><span class="date">VSS 2019 · Poster</span><h3>Encoding context overlap facilitates learning of common structures among similar visual events</h3><p>St. Pete Beach, Florida</p></article>
+        </div>
+        <details>
+          <summary>View earlier and additional presentations</summary>
+          <ul class="archive-list">
+            <li>2020 · Distinct neural populations of repetition suppression and enhancement in visual perception.</li>
+            <li>2020 · Automated clustering of songbirds’ vocal behavior using a variational autoencoder and UMAP.</li>
+            <li>2020 · Intracranial hemorrhage diagnosis using a convolutional deep-learning algorithm.</li>
+            <li>2019 · Context-based memory overlap enhances structural knowledge of similar experiences.</li>
+            <li>2018 · Measuring the behavioral consequences of statistical learning.</li>
+            <li>2018 · Resolving memory clutter based on competition.</li>
+            <li>2017 · Repetition priming and episodic memory.</li>
+            <li>2016 · Incorrectly predicted memories become differentiated after restudy.</li>
+            <li>2015 · Storing and updating non-visual features in visual long-term memory.</li>
+            <li>2013 · Statistical learning of new relationships depends on predictive history.</li>
+            <li>2013 · Pruning of visual memories based on contextual prediction error.</li>
+            <li>2012 · Context-based prediction and memory suppression.</li>
+            <li>2011 · Repetition anti-priming.</li>
+            <li>2009 · Self-positivity bias in source memory; scene inversion and boundary extension.</li>
+          </ul>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" id="public-work">
+      <div class="section-head">
+        <div><p class="section-kicker">Beyond the lab</p><h2>Public scholarship</h2></div>
+        <p class="section-intro">Writing, lectures, and interviews that connect neuroscience with reading, investing, social life, and everyday memory.</p>
+      </div>
+      <div class="public-grid">
+        <a class="public-card" href="https://fliphtml5.com/vnfvl/vayw/4%EC%9B%945%EC%9D%BC_%EC%88%98%EC%9A%94%EC%9D%BC_%EC%8B%9C%EC%B9%B4%EA%B3%A0_%ED%95%9C%EA%B5%AD%EC%9D%BC%EB%B3%B4/12/"><span class="date">Apr 2023</span><h3>Why loneliness fuels conflict</h3><p>The Korea Times Chicago · Opinion</p></a>
+        <a class="public-card" href="https://www.snubh.org/service/info/com/view.do?BNO=216&amp;Board_ID=B003"><span class="date">Dec 2022</span><h3>How does the brain learn?</h3><p>Naeum Plus · Seoul National University Bundang Hospital</p></a>
+        <a class="public-card" href="https://www.sedaily.com/NewsView/26DIB8E66X"><span class="date">Nov 2022</span><h3>The illusion of successful investing</h3><p>Seoul Economic Daily · Neuroscience column</p></a>
+        <a class="public-card" href="https://theliverary.kr/article?id=77"><span class="date">Sep 2022</span><h3>Metacognitive reading for a smarter brain</h3><p>The Liverary · Public video lecture</p></a>
+        <a class="public-card" href="https://v.daum.net/v/ECM5OlXWu7"><span class="date">Jan 2022</span><h3>Revealing how memory and the brain work</h3><p>Electronic Times · Featured researcher interview</p></a>
+      </div>
+    </section>
+
+    <div class="band">
+      <section class="section">
+        <div class="section-head"><div><p class="section-kicker">Academic contributions</p><h2>Teaching, talks &amp; service</h2></div><p class="section-intro">A continuing commitment to making rigorous cognitive science useful to students and wider communities.</p></div>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Teaching</h3><ul class="clean-list"><li><strong>Critical Reading &amp; Writing</strong>Culture-Literacy Research Institute, 2022–present</li><li><strong>Assistant in Instruction</strong>Princeton University, 2013–2015</li><li><strong>Assistant in Instruction</strong>Yonsei University, 2008–2009</li></ul></article>
+          <article class="detail-card"><h3>Invited talks</h3><ul class="clean-list"><li><strong>Pusan National University</strong>Department of Psychology, 2019</li><li><strong>Korea University</strong>Department of Psychology, 2018</li><li><strong>Yonsei University</strong>Department of Psychology, 2017 &amp; 2018</li></ul></article>
+          <article class="detail-card"><h3>Honors &amp; service</h3><ul class="clean-list"><li><strong>Best Paper Award</strong>Agency for Humanities, Yonsei University</li><li><strong>Highest Honors</strong>Undergraduate School, Yonsei University</li><li><strong>Research &amp; Education Program</strong>Daegu Il Science High School, 2019</li></ul></article>
+        </div>
+      </section>
+    </div>
+
+    <section class="cta" id="contact">
+      <div class="cta-inner">
+        <div><p class="section-kicker">Contact</p><h2>Let’s talk about memory, learning, and education.</h2><p>For research, teaching, or writing inquiries, email is the best way to get in touch.</p></div>
+        <a class="button" href="mailto:kimghootae@gmail.com">Email Ghootae</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner"><span>© <span id="year">2026</span> Ghootae Kim</span><span>Updated September 2026 · <a href="mailto:kimghootae@gmail.com?subject=CV%20request">Request CV</a></span></div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const links = [...document.querySelectorAll('.nav-links a')];
+    const sections = links.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, { rootMargin: '-30% 0px -60%', threshold: 0 });
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
