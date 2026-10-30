@@ -165,6 +165,31 @@
     .clean-list li:first-child { border-top: 0; padding-top: 0; }
     .clean-list strong { color: var(--ink); display: block; }
 
+    .mentoring { background: var(--white); border-block: 1px solid var(--line); }
+    .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 34px; }
+    .stat { padding: 22px; border-radius: 18px; background: var(--paper); border: 1px solid var(--line); }
+    .stat strong { display: block; color: var(--blue); font-family: Georgia, serif; font-size: 2.3rem; line-height: 1.1; }
+    .stat span { color: var(--muted); font-size: .9rem; }
+    .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 34px; }
+    .process-step { padding: 22px; border-radius: 18px; background: var(--navy); color: var(--white); }
+    .process-step .num { color: #7de5dd; font-family: Georgia, serif; font-size: 1.6rem; }
+    .process-step h3 { margin: 10px 0 6px; font-size: 1.02rem; }
+    .process-step p { margin: 0; color: #bcd0da; font-size: .9rem; }
+    .outcome-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .outcome { padding: 23px; border-radius: 18px; background: var(--white); border: 1px solid var(--line); }
+    .outcome .date { color: #167e79; }
+    .outcome h3 { margin: 8px 0 8px; font-family: Georgia, serif; font-size: 1.13rem; line-height: 1.35; }
+    .outcome p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .review-head { margin: 34px 0 12px; font-size: 1.05rem; }
+    .review-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+    .review-list li { display: grid; grid-template-columns: 220px 1fr; gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .review-list .date { color: #167e79; }
+    .review-list strong { display: block; font-family: Georgia, serif; font-size: 1.02rem; line-height: 1.4; }
+    .review-list span.meta { color: var(--muted); font-size: .88rem; }
+    .testimonial { margin: 34px 0 0; padding: 28px; border-left: 4px solid var(--gold); border-radius: 0 18px 18px 0; background: var(--paper); }
+    .testimonial p { margin: 0; font-family: Georgia, serif; font-size: 1.15rem; }
+    .testimonial cite { display: block; margin-top: 10px; color: var(--muted); font-style: normal; font-size: .9rem; }
+
     .cta { padding: 70px 24px; background: var(--gold); color: #17232b; }
     .cta-inner { max-width: var(--max); margin: auto; display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; }
     .cta h2 { max-width: 700px; }
@@ -178,7 +203,9 @@
     @media (max-width: 900px) {
       .nav-links a:not(:last-child) { display: none; }
       .hero-inner { grid-template-columns: 1fr .55fr; gap: 30px; }
-      .focus-grid { grid-template-columns: repeat(2, 1fr); }
+      .focus-grid, .process, .stat-grid { grid-template-columns: repeat(2, 1fr); }
+      .outcome-grid { grid-template-columns: 1fr; }
+      .review-list li { grid-template-columns: 1fr; gap: 4px; }
       .public-grid { grid-template-columns: repeat(2, 1fr); }
       .public-card:last-child { grid-column: span 2; min-height: 180px; }
     }
@@ -198,7 +225,7 @@
       .nav { padding-inline: 18px; }
       .nav-links a { font-size: .82rem; }
       .hero-inner, .section { padding-inline: 18px; }
-      .focus-grid, .public-grid { grid-template-columns: 1fr; }
+      .focus-grid, .public-grid, .process, .stat-grid { grid-template-columns: 1fr; }
       .public-card:last-child { grid-column: auto; }
       .conference-shell { padding: 24px 18px; margin-inline: -2px; }
       .publication { grid-template-columns: 1fr; gap: 8px; }
@@ -214,6 +241,7 @@
     <nav class="nav" aria-label="Primary navigation">
       <a class="brand" href="#top">Ghootae Kim<span>.</span></a>
       <div class="nav-links">
+        <a href="#mentoring">Mentoring</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#experience">Experience</a>
@@ -231,7 +259,7 @@
           <p class="hero-copy">I study how experience changes memory—how the brain stabilizes, differentiates, and reorganizes what we learn.</p>
           <div class="actions">
             <a class="button primary" href="#publications">Explore research</a>
-            <a class="button secondary" href="mailto:kimghootae@gmail.com?subject=CV%20request">Request CV</a>
+            <a class="button secondary" href="#mentoring">Student research mentoring</a>
           </div>
           <div class="contact-row">
             <a href="mailto:kimghootae@gmail.com">kimghootae@gmail.com</a>
@@ -245,6 +273,45 @@
         </div>
       </div>
     </section>
+
+    <!-- Student research mentoring -->
+    <div class="mentoring">
+      <section class="section" id="mentoring">
+        <div class="section-head">
+          <div><p class="section-kicker">Student research mentoring</p><h2>From a question to a paper</h2></div>
+          <p class="section-intro">I guide high-school students in the US, Korean students studying in the US, and students at international schools in Korea and across Asia through original research: finding a real question, designing a study, analyzing data, and writing it up to publication standard. The same training that led to papers in PNAS and Nature Communications now goes into helping students build research that stands out in US college admissions.</p>
+        </div>
+        <div class="stat-grid">
+          <div class="stat"><strong>7</strong><span>Students mentored</span></div>
+          <div class="stat"><strong>2</strong><span>Student papers published or accepted</span></div>
+          <div class="stat"><strong>1st</strong><span>Place, International Young Scholars Conference 2026</span></div>
+          <div class="stat"><strong>4</strong><span>More student papers under journal review</span></div>
+        </div>
+        <div class="process">
+          <article class="process-step"><span class="num">01</span><h3>Find the question</h3><p>Turn a student’s genuine interest into a focused, answerable research question.</p></article>
+          <article class="process-step"><span class="num">02</span><h3>Design the study</h3><p>Choose methods, data, and analyses the way a working scientist would.</p></article>
+          <article class="process-step"><span class="num">03</span><h3>Analyze &amp; interpret</h3><p>Run the analysis and reason carefully about what the results do and do not show.</p></article>
+          <article class="process-step"><span class="num">04</span><h3>Write &amp; submit</h3><p>Draft, revise, and prepare the paper for journals, competitions, or applications.</p></article>
+        </div>
+        <div class="outcome-grid">
+          <article class="outcome"><span class="date">2026 · IYSC 1st Place · Oxford Journal of Student Scholarship (accepted)</span><h3>When AI Sounds Human: AI-to-Self Source Confusion Following Human-Like AI Narratives</h3><p>L.K., high-school student, international school in Bangkok · Experimental study of how human-like AI shapes source memory</p></article>
+          <article class="outcome"><span class="date">2026 · IJRIAR · Published</span><h3>Pandemic-Related Concern Domains Associated With PTSD-Like Symptoms Among U.S. Medical Students: An Exploratory Secondary Analysis</h3><p>Y.S., high-school student · Secondary analysis of a six-school U.S. survey (N = 662)</p></article>
+        </div>
+        <h3 class="review-head">Currently under review</h3>
+        <ul class="review-list">
+          <li><span class="date">Columbia Junior Science Journal · Under review</span><div><strong>Relative Neural Evidence and False Acceptance in Source Memory</strong><span class="meta">J.W., high-school student · Reanalysis of public EEG data from a source-memory task</span></div></li>
+          <li><span class="date">Columbia Junior Science Journal · Under review</span><div><strong>Baseline Theta and Beta Activity and Theta Beta Ratio Change During Neurofeedback in Children With ADHD</strong><span class="meta">S.K., high-school student · Secondary analysis of a double-blind neurofeedback trial (N = 99)</span></div></li>
+          <li><span class="date">Columbia Junior Science Journal · Under review</span><div><strong>Cute Mascots and Truth Discernment: Lower Sensitivity in a Truth-Judgment Task</strong><span class="meta">P.J. &amp; K.J., high-school students · Online experiment with 151 adults</span></div></li>
+          <li><span class="date">Young Scientists Journal · Under review</span><div><strong>Can Fractal Patterns Help Explain Why Nature Restores Attention? A Critical Review</strong><span class="meta">J.P., high-school student, U.S. boarding school · Review of visual neuroscience and attention restoration research</span></div></li>
+        </ul>
+        <!-- Testimonial slot, add when a parent or student agrees to be quoted:
+        <blockquote class="testimonial">
+          <p>“...”</p>
+          <cite>Parent of an 11th-grade student, US high school</cite>
+        </blockquote>
+        -->
+      </section>
+    </div>
 
     <section class="section" id="research">
       <div class="section-head">
@@ -362,7 +429,7 @@
 
     <section class="cta" id="contact">
       <div class="cta-inner">
-        <div><p class="section-kicker">Contact</p><h2>Let’s talk about memory, learning, and education.</h2><p>For research, teaching, or writing inquiries, email is the best way to get in touch.</p></div>
+        <div><p class="section-kicker">Contact</p><h2>Let’s talk about your student’s research.</h2><p>For mentoring consultations, research, teaching, or writing inquiries, email is the best way to get in touch.</p></div>
         <a class="button" href="mailto:kimghootae@gmail.com">Email Ghootae</a>
       </div>
     </section>
