@@ -175,7 +175,7 @@
     .process-step .num { color: #7de5dd; font-family: Georgia, serif; font-size: 1.6rem; }
     .process-step h3 { margin: 10px 0 6px; font-size: 1.02rem; }
     .process-step p { margin: 0; color: #bcd0da; font-size: .9rem; }
-    .outcome-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .outcome-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
     .outcome { padding: 23px; border-radius: 18px; background: var(--white); border: 1px solid var(--line); }
     .outcome .date { color: #167e79; }
     .outcome h3 { margin: 8px 0 8px; font-family: Georgia, serif; font-size: 1.13rem; line-height: 1.35; }
@@ -183,8 +183,6 @@
     .testimonial { margin: 34px 0 0; padding: 28px; border-left: 4px solid var(--gold); border-radius: 0 18px 18px 0; background: var(--paper); }
     .testimonial p { margin: 0; font-family: Georgia, serif; font-size: 1.15rem; }
     .testimonial cite { display: block; margin-top: 10px; color: var(--muted); font-style: normal; font-size: .9rem; }
-    /* TODO: remove .placeholder styling once real data replaces every placeholder */
-    .placeholder { outline: 2px dashed #e0a21b; outline-offset: 3px; }
 
     .cta { padding: 70px 24px; background: var(--gold); color: #17232b; }
     .cta-inner { max-width: var(--max); margin: auto; display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; }
@@ -269,8 +267,7 @@
       </div>
     </section>
 
-    <!-- Student research mentoring. Every element with class="placeholder" holds
-         sample text: replace it with real, verifiable data (and drop the class) before publishing. -->
+    <!-- Student research mentoring -->
     <div class="mentoring">
       <section class="section" id="mentoring">
         <div class="section-head">
@@ -289,14 +286,15 @@
           <article class="process-step"><span class="num">04</span><h3>Write &amp; submit</h3><p>Draft, revise, and prepare the paper for journals, competitions, or applications.</p></article>
         </div>
         <div class="outcome-grid">
-          <article class="outcome"><span class="date">2026 · IYSC · 1st Place</span><h3>When AI Sounds Human: AI-to-Self Source Confusion Following Human-Like AI Narratives</h3><p>L.K., high-school student, international school in Bangkok · Experimental study of how human-like AI shapes source memory</p></article>
-          <article class="outcome placeholder"><span class="date">2026 · Oxford Journal of Student Scholarship · Accepted</span><h3>[Paper title]</h3><p>L.K., high-school student, international school in Bangkok</p></article>
+          <article class="outcome"><span class="date">2026 · IYSC 1st Place · Oxford Journal of Student Scholarship (accepted)</span><h3>When AI Sounds Human: AI-to-Self Source Confusion Following Human-Like AI Narratives</h3><p>L.K., high-school student, international school in Bangkok · Experimental study of how human-like AI shapes source memory</p></article>
           <article class="outcome"><span class="date">2026 · IJRIAR · Accepted</span><h3>Pandemic-Related Concern Domains Associated With PTSD-Like Symptoms Among U.S. Medical Students: An Exploratory Secondary Analysis</h3><p>Y.S., high-school student · Secondary analysis of a six-school U.S. survey (N = 662)</p></article>
         </div>
-        <blockquote class="testimonial placeholder">
-          <p>“[Testimonial from a parent or student, used with permission]”</p>
-          <cite>[Parent of an 11th-grade student, US high school]</cite>
+        <!-- Testimonial slot, add when a parent or student agrees to be quoted:
+        <blockquote class="testimonial">
+          <p>“...”</p>
+          <cite>Parent of an 11th-grade student, US high school</cite>
         </blockquote>
+        -->
       </section>
     </div>
 
