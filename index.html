@@ -166,7 +166,7 @@
     .clean-list strong { color: var(--ink); display: block; }
 
     .mentoring { background: var(--white); border-block: 1px solid var(--line); }
-    .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 34px; }
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 34px; }
     .stat { padding: 22px; border-radius: 18px; background: var(--paper); border: 1px solid var(--line); }
     .stat strong { display: block; color: var(--blue); font-family: Georgia, serif; font-size: 2.3rem; line-height: 1.1; }
     .stat span { color: var(--muted); font-size: .9rem; }
@@ -199,7 +199,7 @@
     @media (max-width: 900px) {
       .nav-links a:not(:last-child) { display: none; }
       .hero-inner { grid-template-columns: 1fr .55fr; gap: 30px; }
-      .focus-grid, .stat-grid, .process { grid-template-columns: repeat(2, 1fr); }
+      .focus-grid, .process { grid-template-columns: repeat(2, 1fr); }
       .outcome-grid { grid-template-columns: 1fr; }
       .public-grid { grid-template-columns: repeat(2, 1fr); }
       .public-card:last-child { grid-column: span 2; min-height: 180px; }
@@ -220,7 +220,7 @@
       .nav { padding-inline: 18px; }
       .nav-links a { font-size: .82rem; }
       .hero-inner, .section { padding-inline: 18px; }
-      .focus-grid, .public-grid, .process { grid-template-columns: 1fr; }
+      .focus-grid, .public-grid, .process, .stat-grid { grid-template-columns: 1fr; }
       .public-card:last-child { grid-column: auto; }
       .conference-shell { padding: 24px 18px; margin-inline: -2px; }
       .publication { grid-template-columns: 1fr; gap: 8px; }
@@ -275,13 +275,12 @@
       <section class="section" id="mentoring">
         <div class="section-head">
           <div><p class="section-kicker">Student research mentoring</p><h2>From a question to a paper</h2></div>
-          <p class="section-intro">I guide high-school students in the US, Korean students studying in the US, and students at international schools in Korea through original research: finding a real question, designing a study, analyzing data, and writing it up to publication standard. The same training that led to papers in PNAS and Nature Communications now goes into helping students build research that stands out in US college admissions.</p>
+          <p class="section-intro">I guide high-school students in the US, Korean students studying in the US, and students at international schools in Korea and across Asia through original research: finding a real question, designing a study, analyzing data, and writing it up to publication standard. The same training that led to papers in PNAS and Nature Communications now goes into helping students build research that stands out in US college admissions.</p>
         </div>
         <div class="stat-grid">
-          <div class="stat placeholder"><strong>[N]</strong><span>Students mentored</span></div>
-          <div class="stat placeholder"><strong>[N]</strong><span>Student papers published or accepted</span></div>
-          <div class="stat placeholder"><strong>[N]</strong><span>Competition awards</span></div>
-          <div class="stat placeholder"><strong>[N]</strong><span>Admitted to [selective US universities]</span></div>
+          <div class="stat"><strong>7</strong><span>Students mentored</span></div>
+          <div class="stat"><strong>2</strong><span>Student papers accepted for publication</span></div>
+          <div class="stat"><strong>1st</strong><span>Place, International Young Scholars Conference 2026</span></div>
         </div>
         <div class="process">
           <article class="process-step"><span class="num">01</span><h3>Find the question</h3><p>Turn a student’s genuine interest into a focused, answerable research question.</p></article>
@@ -290,9 +289,9 @@
           <article class="process-step"><span class="num">04</span><h3>Write &amp; submit</h3><p>Draft, revise, and prepare the paper for journals, competitions, or applications.</p></article>
         </div>
         <div class="outcome-grid">
-          <article class="outcome placeholder"><span class="date">[Year] · [Publication / Competition]</span><h3>[Student paper title]</h3><p>[Grade, school type, e.g. 11th grade, international school in Seoul] · [Outcome: journal, award, or admission]</p></article>
-          <article class="outcome placeholder"><span class="date">[Year] · [Publication / Competition]</span><h3>[Student paper title]</h3><p>[Grade, school type] · [Outcome]</p></article>
-          <article class="outcome placeholder"><span class="date">[Year] · [Publication / Competition]</span><h3>[Student paper title]</h3><p>[Grade, school type] · [Outcome]</p></article>
+          <article class="outcome"><span class="date">2026 · IYSC · 1st Place</span><h3>When AI Sounds Human: AI-to-Self Source Confusion Following Human-Like AI Narratives</h3><p>L.K., high-school student, international school in Bangkok · Experimental study of how human-like AI shapes source memory</p></article>
+          <article class="outcome placeholder"><span class="date">2026 · Oxford Journal of Student Scholarship · Accepted</span><h3>[Paper title]</h3><p>L.K., high-school student, international school in Bangkok</p></article>
+          <article class="outcome"><span class="date">2026 · IJRIAR · Accepted</span><h3>Pandemic-Related Concern Domains Associated With PTSD-Like Symptoms Among U.S. Medical Students: An Exploratory Secondary Analysis</h3><p>Y.S., high-school student · Secondary analysis of a six-school U.S. survey (N = 662)</p></article>
         </div>
         <blockquote class="testimonial placeholder">
           <p>“[Testimonial from a parent or student, used with permission]”</p>
